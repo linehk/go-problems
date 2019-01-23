@@ -1,10 +1,10 @@
-package duplicate
+package duplicationInArrayNoEdit
 
 import (
 	"testing"
 )
 
-func TestDuplicate2(t *testing.T) {
+func TestDuplicationInArrayNoEdit(t *testing.T) {
 	tests := []struct {
 		input    []int
 		want     []int
@@ -13,7 +13,7 @@ func TestDuplicate2(t *testing.T) {
 		{[]int{2, 3, 5, 4, 3, 2, 6, 7}, []int{2, 3}, true},
 	}
 	for i, tt := range tests {
-		got1, ok1 := duplicate5(tt.input)
+		got1, ok1 := duplicationInArrayNoEdit1(tt.input)
 		if ok1 != tt.wantBool {
 			t.Errorf("%v. got1 %v, want %v", i, ok1, tt.wantBool)
 		}
@@ -27,7 +27,7 @@ func TestDuplicate2(t *testing.T) {
 			t.Errorf("%v. got1 %v, want %v", i, got1, tt.want)
 		}
 
-		got2, ok2 := duplicate6(tt.input)
+		got2, ok2 := duplicationInArrayNoEdit2(tt.input)
 		if ok2 != tt.wantBool {
 			t.Errorf("%v. got2 %v, want %v", i, ok2, tt.wantBool)
 		}
@@ -41,7 +41,7 @@ func TestDuplicate2(t *testing.T) {
 			t.Errorf("%v. got2 %v, want %v", i, got2, tt.want)
 		}
 
-		got3, ok3 := duplicate7(tt.input)
+		got3, ok3 := duplicationInArrayNoEdit3(tt.input)
 		if ok3 != tt.wantBool {
 			t.Errorf("%v. got3 %v, want %v", i, ok3, tt.wantBool)
 		}

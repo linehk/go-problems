@@ -1,4 +1,4 @@
-package duplicate
+package duplicationInArray
 
 import (
 	"sort"
@@ -6,7 +6,7 @@ import (
 
 // 排序法（可得全部重复）
 // O(nlgn) O(1)
-func duplicate1(nums []int) (int, bool) {
+func duplicationInArray1(nums []int) (int, bool) {
 	sort.Ints(nums)
 	for i := 0; i < len(nums)-1; i++ {
 		if nums[i] == nums[i+1] {
@@ -18,7 +18,7 @@ func duplicate1(nums []int) (int, bool) {
 
 // 哈希表法（可得全部重复）
 // O(n) O(n)
-func duplicate2(nums []int) (int, bool) {
+func duplicationInArray2(nums []int) (int, bool) {
 	m := make(map[int]int, len(nums)-1)
 	for _, v := range nums {
 		if _, ok := m[v]; ok {
@@ -32,7 +32,7 @@ func duplicate2(nums []int) (int, bool) {
 
 // 计数法（可得全部重复）
 // O(n) O(n)
-func duplicate3(nums []int) (int, bool) {
+func duplicationInArray3(nums []int) (int, bool) {
 	s := make([]int, len(nums)-1)
 	for _, v := range nums {
 		if s[v] != 0 {
@@ -46,7 +46,7 @@ func duplicate3(nums []int) (int, bool) {
 
 // 不可得全部重复 需要修改数组
 // O(n) O(1)
-func duplicate4(nums []int) (int, bool) {
+func duplicationInArray4(nums []int) (int, bool) {
 	for i, v := range nums {
 		if v != i {
 			if v == nums[v] {

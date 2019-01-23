@@ -1,8 +1,8 @@
-package duplicate
+package duplicationInArrayNoEdit
 
 // 计数法（不可得全部）
 // O(n) O(n)
-func duplicate5(nums []int) (int, bool) {
+func duplicationInArrayNoEdit1(nums []int) (int, bool) {
 	s := make([]int, len(nums))
 	for _, v := range nums {
 		if s[v] == v {
@@ -16,7 +16,7 @@ func duplicate5(nums []int) (int, bool) {
 
 // 计数法（两次扫描，可得全部）
 // O(2n) O(n)
-func duplicate6(nums []int) (int, bool) {
+func duplicationInArrayNoEdit2(nums []int) (int, bool) {
 	s := make([]int, len(nums))
 	for _, v := range nums {
 		s[v]++
@@ -31,7 +31,7 @@ func duplicate6(nums []int) (int, bool) {
 
 // 二分法
 // O(nlgn) O(1)
-func duplicate7(nums []int) (int, bool) {
+func duplicationInArrayNoEdit3(nums []int) (int, bool) {
 	start := 1
 	end := len(nums) - 1
 	for start <= end {
