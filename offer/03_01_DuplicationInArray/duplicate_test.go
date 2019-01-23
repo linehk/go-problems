@@ -1,4 +1,4 @@
-package problem03
+package duplicate
 
 import (
 	"testing"

@@ -1,4 +1,4 @@
-package problem03
+package duplicate
 
 // 计数法（不可得全部）
 // O(n) O(n)

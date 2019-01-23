@@ -1,4 +1,4 @@
-package problem02
+package singleton
 
 import (
 	"testing"
