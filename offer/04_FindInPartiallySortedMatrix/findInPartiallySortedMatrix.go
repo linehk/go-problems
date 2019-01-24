@@ -2,23 +2,25 @@ package findInPartiallySortedMatrix
 
 // 暴力法
 // O(n2)
-func findInPartiallySortedMatrix1(matrix [][]int, number int) bool {
+func findInPartiallySortedMatrix1(matrix [][]int, target int) bool {
 	if matrix == nil {
 		return false
 	}
-	if len(matrix) <= 0 {
+	if len(matrix) == 0 {
 		return false
 	}
-	if len(matrix[0]) <= 0 {
+	if len(matrix[0]) == 0 {
 		return false
 	}
+
 	for _, rows := range matrix {
 		for _, v := range rows {
-			if v == number {
+			if v == target {
 				return true
 			}
 		}
 	}
+
 	return false
 }
 
@@ -48,5 +50,6 @@ func findInPartiallySortedMatrix2(matrix [][]int, target int) bool {
 			row++
 		}
 	}
+
 	return false
 }

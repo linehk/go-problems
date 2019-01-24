@@ -46,7 +46,7 @@ func duplicationInArray3(nums []int) (int, bool) {
 		return 0, false
 	}
 
-	s := make([]int, len(nums)-1)
+	s := make([]int, len(nums))
 	for _, v := range nums {
 		if s[v] != 0 {
 			return v, true
@@ -64,12 +64,12 @@ func duplicationInArray4(nums []int) (int, bool) {
 		return 0, false
 	}
 
-	for i, v := range nums {
-		for v != i {
-			if v == nums[v] {
-				return v, true
+	for i := range nums {
+		for i != nums[i] {
+			if nums[i] == nums[nums[i]] {
+				return nums[i], true
 			}
-			nums[i], nums[v] = nums[v], nums[i]
+			nums[i], nums[nums[i]] = nums[nums[i]], nums[i]
 		}
 	}
 

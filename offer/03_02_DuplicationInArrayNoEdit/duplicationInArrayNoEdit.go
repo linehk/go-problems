@@ -29,9 +29,9 @@ func duplicationInArrayNoEdit2(nums []int) (int, bool) {
 	for _, v := range nums {
 		s[v]++
 	}
-	for _, v := range s {
+	for i, v := range s {
 		if v > 1 {
-			return v, true
+			return i, true
 		}
 	}
 
