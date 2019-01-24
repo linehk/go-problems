@@ -24,27 +24,28 @@ func findInPartiallySortedMatrix1(matrix [][]int, number int) bool {
 
 // 一次剔除一列或一行
 // O(n)
-func findInPartiallySortedMatrix2(matrix [][]int, number int) bool {
+func findInPartiallySortedMatrix2(matrix [][]int, target int) bool {
 	if matrix == nil {
 		return false
 	}
 	rows := len(matrix)
-	if rows <= 0 {
+	if rows == 0 {
 		return false
 	}
-	columns := len(matrix[0])
-	if columns <= 0 {
+	cols := len(matrix[0])
+	if cols == 0 {
 		return false
 	}
-	rowIndex := 0
-	columnIndex := columns - 1
-	for rowIndex < rows && columnIndex >= 0 {
-		if matrix[rowIndex][columnIndex] == number {
+
+	row := 0
+	col := cols - 1
+	for row < rows && col >= 0 {
+		if matrix[row][col] == target {
 			return true
-		} else if matrix[rowIndex][columnIndex] > number {
-			columnIndex--
+		} else if matrix[row][col] > target {
+			col--
 		} else {
-			rowIndex++
+			row++
 		}
 	}
 	return false
