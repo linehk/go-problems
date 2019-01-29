@@ -1,13 +1,17 @@
 package array
 
 func containsDuplicate(nums []int) bool {
-        m := make(map[int]struct{})
-        for _, v := range nums {
-                if _, ok := m[v]; !ok {
-                        m[v] = struct{}{}
-                } else {
-                        return true
-                }
-        }
-        return false
+	if len(nums) == 0 {
+		return false
+	}
+
+	m := make(map[int]struct{})
+	for i := range nums {
+		if _, ok := m[nums[i]]; ok {
+			return true
+		}
+		m[nums[i]] = struct{}{}
+	}
+
+	return false
 }
