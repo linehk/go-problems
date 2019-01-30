@@ -1,14 +1,13 @@
 package array
 
 func moveZeroes(nums []int) {
-	if len(nums) <= 1 {
+	if len(nums) < 2 {
 		return
 	}
-	j := 0
-	for i, v := range nums {
-		if v != 0 {
-			nums[i] = nums[j]
-			nums[j] = v
+
+	for i, j := 0, 0; i < len(nums); i++ {
+		if nums[i] != 0 {
+			nums[i], nums[j] = nums[j], nums[i]
 			j++
 		}
 	}

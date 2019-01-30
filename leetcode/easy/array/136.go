@@ -5,6 +5,5 @@ func singleNumber(nums []int) int {
 	for i := range nums {
 		res ^= nums[i]
 	}
-
 	return res
 }

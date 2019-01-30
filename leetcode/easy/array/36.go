@@ -23,49 +23,49 @@ func isValidSudoku(board [][]byte) bool {
 }
 
 func isValidSudokuRow(board [][]byte, row int) bool {
-	var nums [10]bool
+	var isExist [10]bool
 	for col := 0; col < 9; col++ {
 		n := convertToNumber(board[row][col])
 		if n < 0 {
 			continue
 		}
-		if nums[n] {
+		if isExist[n] {
 			return false
 		}
-		nums[n] = true
+		isExist[n] = true
 	}
 	return true
 }
 
 func isValidSudokuCol(board [][]byte, col int) bool {
-	var nums [10]bool
+	var isExist [10]bool
 	for row := 0; row < 9; row++ {
 		n := convertToNumber(board[row][col])
 		if n < 0 {
 			continue
 		}
-		if nums[n] {
+		if isExist[n] {
 			return false
 		}
-		nums[n] = true
+		isExist[n] = true
 	}
 	return true
 }
 
 func isValidSudokuPod(board [][]byte, pod int) bool {
-	var nums [10]bool
+	var isExist [10]bool
 	row := (pod / 3) * 3
 	col := (pod % 3) * 3
-	for drow := 0; drow < 3; drow++ {
-		for dcol := 0; dcol < 3; dcol++ {
-			n := convertToNumber(board[row+drow][col+dcol])
+	for podRow := 0; podRow < 3; podRow++ {
+		for podCol := 0; podCol < 3; podCol++ {
+			n := convertToNumber(board[row+podRow][col+podCol])
 			if n < 0 {
 				continue
 			}
-			if nums[n] {
+			if isExist[n] {
 				return false
 			}
-			nums[n] = true
+			isExist[n] = true
 		}
 	}
 	return true

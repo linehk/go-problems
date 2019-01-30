@@ -4,7 +4,6 @@ func rotate(nums []int, k int) {
 	if len(nums) == 0 {
 		return
 	}
-
 	k %= len(nums)
 	reverse(nums, 0, len(nums)-1)
 	reverse(nums, 0, k-1)
