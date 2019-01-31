@@ -4,7 +4,7 @@ func rotate(matrix [][]int) {
 	if len(matrix) == 0 {
 		return
 	}
-	// 先减一
+	// n 为索引最大值
 	n := len(matrix) - 1
 	// i 只需遍历一半
 	for i := 0; i <= n/2; i++ {
