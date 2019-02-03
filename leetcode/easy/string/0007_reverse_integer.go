@@ -7,11 +7,13 @@ import (
 func reverse(x int) int {
 	res := 0
 	for x != 0 {
-		temp := x % 10
-		res = res*10 + temp
+		// 取出十进制的最后一位
+		tail := x % 10
+		// *10 实现十进制左移
+		res = res*10 + tail
 		x /= 10
 	}
-	if res > math.MaxInt32 || res < math.MinInt32 {
+	if math.MaxInt32 < res || res < math.MaxInt32 {
 		return 0
 	}
 	return res

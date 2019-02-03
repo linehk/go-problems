@@ -5,15 +5,19 @@ import (
 )
 
 func isPalindrome(s string) bool {
+	// 先转换成小写
 	s = strings.ToLower(s)
-	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
-		for i < j && !isChar(s[i]) {
-			i++
+	for left, right := 0, len(s)-1; left < right; left, right = left+1, right-1 {
+		// 使 left 指向小写字母
+		for left < right && !isChar(s[left]) {
+			left++
 		}
-		for i < j && !isChar(s[j]) {
-			j--
+		// 使 right 指向小写字母
+		for left < right && !isChar(s[right]) {
+			right--
 		}
-		if s[i] != s[j] {
+		// 不相等则表示不是回文
+		if s[left] != s[right] {
 			return false
 		}
 	}

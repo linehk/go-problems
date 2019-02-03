@@ -1,52 +1,39 @@
 package string
 
 import (
-	"strconv"
+	"math"
 )
 
 func myAtoi(str string) int {
-	const INT_MAX = int(^uint32(0) >> 1)
-	const INT_MIN = ^INT_MAX
-	sOp := ""
-	sRes := ""
-	for _, ch := range str {
-		if '0' <= ch && ch <= '9' {
-			sRes += string(ch)
-			continue
-		}
-		if ch == '.' {
-			break
-		}
-		if ch == '-' || ch == '+' {
-			if len(sOp) != 0 {
-				break
-			}
-			if len(sRes) == 0 {
-				sOp = string(ch)
-				continue
-			}
-		}
-		if ch != ' ' {
-			if len(sOp) == 0 && len(sRes) == 0 {
-				return 0
-			}
-			break
-		} else {
-			if len(sRes) != 0 || len(sOp) != 0 {
-				break
-			}
-		}
-	}
-	if len(sRes) == 0 {
+	if len(str) == 0 {
 		return 0
 	}
-	sRes = sOp + sRes
-	iRes, _ := strconv.Atoi(sRes)
-	if iRes > INT_MAX {
-		return INT_MAX
+	// 去除空格
+	i := 0
+	for i < len(str) && str[i] == ' ' {
+		i++
 	}
-	if iRes < INT_MIN {
-		return INT_MIN
+	// 设置符号
+	if i >= len(str) {
+		return 0
 	}
-	return iRes
+	sign := 1
+	if str[i] == '+' {
+		sign = 1
+		i++
+	} else if str[i] == '-' {
+		sign = -1
+		i++
+	}
+	// 迭代结果
+	res := 0
+	for ; i < len(str) && '0' <= str[i] && str[i] <= '9'; i++ {
+		res = res*10 + (int(str[i]) - '0')
+		if sign*res > math.MaxInt32 {
+			return math.MaxInt32
+		} else if sign*res < math.MinInt32 {
+			return math.MinInt32
+		}
+	}
+	return res * sign
 }
