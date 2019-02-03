@@ -11,15 +11,16 @@ func isValidSudoku(board [][]byte) bool {
 				// '9' 的 ascii 码为 57
 				// '1' 的为 49
 				// '1-9' 的字符减去 '1' 后都在整数 1-9 之间
+				// index := board[row][col] - '0' - 1
 				index := board[row][col] - '1'
 				if rowFlag[row][index] ||
 					colFlag[index][col] ||
-					cellFlag[3*(row/3)+col/3][index] {
+					cellFlag[row/3*3+col/3][index] {
 					return false
 				}
 				rowFlag[row][index] = true
 				colFlag[index][col] = true
-				cellFlag[3*(row/3)+col/3][index] = true
+				cellFlag[row/3*3+col/3][index] = true
 			}
 		}
 	}

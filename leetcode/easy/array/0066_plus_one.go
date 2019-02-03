@@ -2,18 +2,16 @@ package array
 
 func plusOne(digits []int) []int {
 	for i := len(digits) - 1; i >= 0; i-- {
-		// 等于 10 则需要进位
-		if digits[i]+1 == 10 {
-			digits[i] = 0
-			// 最高位也需要进位时
-			if i == 0 {
-				digits = append([]int{1}, digits...)
-			}
-		} else {
-			// 不需要进位之间加
+		// 未进位
+		if digits[i] < 9 {
 			digits[i]++
-			break
+			return digits
 		}
+		// 进位
+		digits[i] = 0
 	}
-	return digits
+	// 最高位进位
+	highest := make([]int, len(digits)+1)
+	highest[0] = 1
+	return highest
 }
