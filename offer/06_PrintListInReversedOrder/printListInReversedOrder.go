@@ -3,8 +3,9 @@ package printListInReversedOrder
 import (
 	"container/list"
 	"fmt"
-	"github.com/linehk/GoProblems/offer/utils"
 	"strconv"
+
+	"github.com/linehk/go-problems/offer/utils"
 )
 
 func printListInReversedOrder(head *list.Element) {
