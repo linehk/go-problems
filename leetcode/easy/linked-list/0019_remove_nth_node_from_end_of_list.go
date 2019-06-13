@@ -6,24 +6,22 @@ type ListNode struct {
 }
 
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
-	if head == nil {
-		return nil
-	}
-	start := head
-	start2 := head
+	// fast 指针先走 n 步
+	fast := head
 	for i := 0; i < n; i++ {
-		if start == nil {
-			return head
-		}
-		start = start.Next
+		fast = fast.Next
 	}
-	if start == nil {
+	// 避免链表中只有一个结点
+	if fast == nil {
 		return head.Next
 	}
-	for start.Next != nil {
-		start = start.Next
-		start2 = start2.Next
+	// 两个指针一起走直到 fast 指针到尾
+	slow := head
+	for fast.Next != nil {
+		fast = fast.Next
+		slow = slow.Next
 	}
-	start2.Next = start2.Next.Next
+	// 现在可以删除 slow 指针了
+	slow.Next = slow.Next.Next
 	return head
 }
