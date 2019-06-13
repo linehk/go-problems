@@ -1,5 +1,10 @@
 package sort_search
 
+// Forward declaration of isBadVersion API.
+func isBadVersion(version int) bool {
+	return true
+}
+
 func firstBadVersion(n int) int {
 	lo, hi := 1, n
 	mid := 0
