@@ -21,7 +21,7 @@ func printListInReversedOrder(head *list.Element) {
 		i := stack.Pop()
 		n := i.(*list.Element)
 		v := n.Value.(int32)
-		s += fmt.Sprintf("%s", strconv.Itoa(int(v)))
+		s += strconv.Itoa(int(v))
 	}
 	fmt.Println(s)
 }

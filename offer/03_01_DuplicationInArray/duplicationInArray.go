@@ -7,7 +7,7 @@ import (
 // 排序法（可得全部重复）
 // O(nlgn) O(1)
 func duplicationInArray1(nums []int) (int, bool) {
-	if nums == nil || len(nums) == 0 {
+	if len(nums) == 0 {
 		return 0, false
 	}
 
@@ -24,7 +24,7 @@ func duplicationInArray1(nums []int) (int, bool) {
 // 哈希表法（可得全部重复）
 // O(n) O(n)
 func duplicationInArray2(nums []int) (int, bool) {
-	if nums == nil || len(nums) == 0 {
+	if len(nums) == 0 {
 		return 0, false
 	}
 
@@ -42,7 +42,7 @@ func duplicationInArray2(nums []int) (int, bool) {
 // 计数法（可得全部重复）
 // O(n) O(n)
 func duplicationInArray3(nums []int) (int, bool) {
-	if nums == nil || len(nums) == 0 {
+	if len(nums) == 0 {
 		return 0, false
 	}
 
@@ -60,7 +60,7 @@ func duplicationInArray3(nums []int) (int, bool) {
 // 不可得全部重复 需要修改数组
 // O(n) O(1)
 func duplicationInArray4(nums []int) (int, bool) {
-	if nums == nil || len(nums) == 0 {
+	if len(nums) == 0 {
 		return 0, false
 	}
 

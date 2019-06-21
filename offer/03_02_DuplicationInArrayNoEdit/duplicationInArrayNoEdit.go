@@ -3,7 +3,7 @@ package duplicationInArrayNoEdit
 // 计数法（不可得全部）
 // O(n) O(n)
 func duplicationInArrayNoEdit1(nums []int) (int, bool) {
-	if nums == nil || len(nums) == 0 {
+	if len(nums) == 0 {
 		return 0, false
 	}
 
@@ -21,7 +21,7 @@ func duplicationInArrayNoEdit1(nums []int) (int, bool) {
 // 计数法（两次扫描，可得全部）
 // O(2n) O(n)
 func duplicationInArrayNoEdit2(nums []int) (int, bool) {
-	if nums == nil || len(nums) == 0 {
+	if len(nums) == 0 {
 		return 0, false
 	}
 
@@ -41,7 +41,7 @@ func duplicationInArrayNoEdit2(nums []int) (int, bool) {
 // 二分法
 // O(nlgn) O(1)
 func duplicationInArrayNoEdit3(nums []int) (int, bool) {
-	if nums == nil || len(nums) == 0 {
+	if len(nums) == 0 {
 		return 0, false
 	}
 
