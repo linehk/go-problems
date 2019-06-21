@@ -14,12 +14,6 @@ go-problems 是一个包含了各种 Go 语言题目解答的仓库。
 git clone https://github.com/linehk/go-problems.git
 ```
 
-或者：
-
-```bash
-go get -u github.com/linehk/go-problems
-```
-
 ## 参与贡献
 
 如果你觉得我的参考答案有什么需要改进的地方，欢迎发起 Pull Request。

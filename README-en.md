@@ -14,12 +14,6 @@ go-problems is a repo that contains a variety of exercise answers about Golang.
 git clone https://github.com/linehk/go-problems.git
 ```
 
-Or:
-
-```bash
-go get -u github.com/linehk/go-problems
-```
-
 ## Contributing
 
 If you feel that there is something to improve my exercise answers, please feel free to launch Pull Request.
