@@ -20,6 +20,9 @@ func isValid(root *TreeNode, min, max int) bool {
 	if root == nil {
 		return true
 	}
+	// 符合 BST 条件：min < root < max
+	// 并且左子树也符合，这时根节点值为最大值
+	// 并且右子树也符合，这时根节点值为最小值
 	return min < root.Val && root.Val < max &&
 		isValid(root.Left, min, root.Val) &&
 		isValid(root.Right, root.Val, max)

@@ -9,6 +9,7 @@ func fizzBuzz(n int) []string {
 	for i := range res {
 		x := i + 1
 		switch {
+		// 同时是 3 和 5 的倍数，即 15
 		case x%15 == 0:
 			res[i] = "FizzBuzz"
 		case x%5 == 0:
@@ -16,6 +17,7 @@ func fizzBuzz(n int) []string {
 		case x%3 == 0:
 			res[i] = "Fizz"
 		default:
+			// 正常数字
 			res[i] = strconv.Itoa(x)
 		}
 	}

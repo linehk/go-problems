@@ -1,5 +1,6 @@
 package sort_search
 
+// 归并排序中顶点 merge 函数
 func merge(nums1 []int, m int, nums2 []int, n int) {
 	temp := make([]int, len(nums1))
 	copy(temp, nums1)
