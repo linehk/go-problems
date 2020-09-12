@@ -38,7 +38,7 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 		node = node.Next
 	}
 
-	// 放置好最后一个元素
+	// 放置好最后一个元素，l1 和 l2 谁还有元素就用谁的
 	if l1 != nil {
 		node.Next = l1
 	}

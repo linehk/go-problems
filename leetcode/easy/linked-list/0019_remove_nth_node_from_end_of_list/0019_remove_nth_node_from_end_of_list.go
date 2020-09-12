@@ -11,7 +11,7 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	for i := 0; i < n; i++ {
 		fast = fast.Next
 	}
-	// 避免链表中只有一个结点
+	// 避免 fast 走完后链表中只有一个结点
 	if fast == nil {
 		return head.Next
 	}

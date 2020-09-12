@@ -10,8 +10,8 @@ func reverseList(head *ListNode) *ListNode {
 	cur := head        // 当前结点
 	var next *ListNode // 下一个结点
 	for cur != nil {
-		next = cur.Next // 初始化 next 的位置
-		cur.Next = pre  // 设置当前结点的下一个结点为前一个结点
+		next = cur.Next // next 前进
+		cur.Next = pre  // 倒序，所以要设置当前结点的下一个结点为前一个结点
 		pre = cur       // pre 前进
 		cur = next      // cur 前进
 	}
