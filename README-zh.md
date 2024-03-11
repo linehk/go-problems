@@ -1,6 +1,5 @@
 # go-problems
 
-[![Build Status](https://travis-ci.org/linehk/go-problems.svg?branch=master)](https://travis-ci.org/linehk/go-problems)
 [![codecov](https://codecov.io/gh/linehk/go-problems/branch/master/graph/badge.svg)](https://codecov.io/gh/linehk/go-problems)
 [![Go Report Card](https://goreportcard.com/badge/github.com/linehk/go-problems)](https://goreportcard.com/report/github.com/linehk/go-problems)
 
