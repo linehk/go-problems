@@ -1,7 +1,8 @@
 # go-problems
 
-[![codecov](https://codecov.io/gh/linehk/go-problems/branch/master/graph/badge.svg)](https://codecov.io/gh/linehk/go-problems)
-[![Go Report Card](https://goreportcard.com/badge/github.com/linehk/go-problems)](https://goreportcard.com/report/github.com/linehk/go-problems)
+[![build](https://github.com/linehk/go-problems/actions/workflows/build.yml/badge.svg "build")](https://github.com/linehk/go-problems/actions)
+[![codecov](https://codecov.io/gh/linehk/go-problems/graph/badge.svg "codecov")](https://codecov.io/gh/linehk/go-problems)
+[![go report](https://goreportcard.com/badge/github.com/linehk/go-problems "go report")](https://goreportcard.com/report/github.com/linehk/go-problems)
 
 English | [简体中文](./README-zh.md "简体中文")
 
