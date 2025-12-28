@@ -1,3 +1,3 @@
 module github.com/linehk/go-problems
 
-go 1.22.0
+go 1.25.5
